@@ -1,9 +1,24 @@
 ---
 layout: page
-title: Latest Posts
+title:  Metro PHP 
 excerpt: "A simple and clean responsive Jekyll theme for words and photos."
 ---
 
+<section>
+    <h3>
+      Will I like the Metro PHP framework?
+    </h3>
+      <ul>
+        <li>Do you like performance?</li>
+        <li>Do you want more Rapid in your RAD?</li>
+        <li>Do you prefer the "has-a" over the "is-a" paradigm?</li>
+		<li>Do you ever think you're spending more time configuring your current framework than writing good code?</li>
+    </ul>
+    <p>
+If you've answered, yes, to any of these questions, then fork nofw and buckle up for a ride.
+    </p>
+  </section>
+  <h1>Latest Documentation</h1>
 <ul class="post-list">
 {% for post in site.categories.docs limit:10 %} 
   <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
