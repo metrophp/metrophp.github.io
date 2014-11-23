@@ -17,33 +17,34 @@ Your First Request
 =====
 Start by cloning the git repository _metroproject_.  
 {% highlight bash %}
-  git clone https://github.com/metrophp/metroproject.git mynewproj
-  cd mynewproj
-  rm -Rf .git
-  git init .
+git clone https://github.com/metrophp/metroproject.git mynewproj
+cd mynewproj
+rm -Rf .git
+git init .
 {% endhighlight %}
 
 Copy the etc/bootstrap.php.txt to etc/bootstrap.php
-```bash
+{% highlight bash %}
 cp etc/bootstrap.php.txt etc/bootstrap.php
-```
+{% endhighlight %}
+
 Initialize dependencies with composer
-```bash
+{% highlight bash %}
 composer install
-```
+{% endhighlight %}
 
 Now let's add a simple hello world file so you can see how the configuration works. Edit the etc/bootstrap.php file so it looks like this:
-```php
+{% highlight php %}
 // etc/bootsrap.php
 _iCanHandle('output',  'example/helloworld.php');
-```
+{% endhighlight %}
 
 Create a directory in src called "example" and create the helloworld.php file
-```bash
+{% highlight bash %}
 mkdir src/example
-```
+{% endhighlight %}
 
-```php
+{% highlight php %}
 <?php
 
 class Example_Helloworld {
@@ -52,7 +53,8 @@ class Example_Helloworld {
 		echo "Hello World. <br/>\n";
 	}
 }
-```
+{% endhighlight %}
+
 Load your site and check your results.
 
 Class Name Mapping
