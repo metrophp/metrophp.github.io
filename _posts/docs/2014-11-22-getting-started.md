@@ -61,7 +61,7 @@ class Example_Helloworld {
 }
 {% endhighlight %}
 
-Load your site and check your results.
+Load any page on your installation and check your results.  We should see "Hello World" and the processing time on every page.  (The hangup lifecycle is part of every page request).
 
 Notice how the example class doesn't need to extend any parent class.  The Metro PHP kernel uses a the name of the lifecycle handled by the component as a method name to act as the entry point of that component into the framework.
 
