@@ -16,12 +16,12 @@ share: true
 Your First Request
 =====
 Start by cloning the git repository _metroproject_.  
-```bash
+{% highlight bash %}
   git clone https://github.com/metrophp/metroproject.git mynewproj
   cd mynewproj
   rm -Rf .git
   git init .
-```
+{% endhighlight %}
 
 Copy the etc/bootstrap.php.txt to etc/bootstrap.php
 ```bash
