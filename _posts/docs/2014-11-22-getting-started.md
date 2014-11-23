@@ -36,13 +36,13 @@ composer install
 Don't Panic, I Can Handle It
 ======
 
-Now let's add a simple hello world file so you can see how the configuration works. Edit the etc/bootstrap.php file so it looks like this:
-{% highlight php %}
-// etc/bootsrap.php
-_iCanHandle('output',  'example/helloworld.php');
+Now let's add a simple hello world file so you can see how the configuration works. Edit the etc/bootstrap.php file and add the following to the bottom of the file:
+{% highlight php startinline %}
+// paste at bottom etc/bootsrap.php
+_iCanHandle('hangup',  'example/helloworld.php');
 {% endhighlight %}
 
-The *\_iCanHandle* function tells the kernel that the file **example/helloworld.php** wants to participate in the **ouput** lifecycle
+The *\_iCanHandle* function tells the kernel that the file **example/helloworld.php** wants to participate in the **hangup** lifecycle
 
 Create a directory in src called "example" and create the helloworld.php file
 {% highlight bash %}
