@@ -53,7 +53,7 @@ mkdir src/example
 <?php
 class Example_Helloworld {
 
-	public function output($request, $response) {
+	public function hangup($request, $response) {
 		echo "Hello World. <br/>\n";
 	}
 }
