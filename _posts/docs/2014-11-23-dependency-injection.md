@@ -17,7 +17,7 @@ DI Container
 DI is handled by the [Metrodi's Container](https://github.com/metrophp/metrodi) class.
 This DI container is unlike most others in that - when inpecting constructor arguments - it defaults to matching the parameter **name** before attempting to match the type hint.
 
-{% highlight php %}
+{% highlight php startinline %}
 class MyAuditLog
     public function __construct($user, $log) {
 }
@@ -26,7 +26,7 @@ class MyAuditLog
 Such a class, when created with the DI container, will be passed any objects you specify
 as a "user" and a "log".
 
-{% highlight php %}
+{% highlight php startinline %}
 _didef('user', 'my/log.php');  //Requires a class called My_Log in that file
 _didef('log', 'Monolog\Logger');  //Can use any class name
 {% endhighlight %}
@@ -34,7 +34,7 @@ _didef('log', 'Monolog\Logger');  //Can use any class name
 Setting up and using the container
 ====
 Metro DI can be used by creating an object or as a singleton with globally namespaced functions.
-{% highlight php %}
+{% highlight php startinline %}
 
     $cont = Metrodi_Container::getContainer();
     $cont->set('flaga', true);
@@ -43,7 +43,7 @@ Metro DI can be used by creating an object or as a singleton with globally names
 {% endhighlight %}
 
 With global functions it looks like this:
-{% highlight php %}
+{% highlight php startinline %}
 
     _set('flaga', true);
     _didef('logService', 'path/to/log.php', 'arg1', 'arg2', 'arg3');
@@ -54,7 +54,7 @@ Defining Things
 ---
 In Metro DI you name your dependencies with the **_didef** function.
 
-{% highlight php %}
+{% highlight php startinline %}
 
     _didef('shoppingCart', 'My\Cart\Cart');
     $cart = _make('shoppingCart');
@@ -66,7 +66,7 @@ Constructor Injection
 When another class wants a **$shoppingCart** as a constructor param, the DI container will
 automatically inject the defined class if you make the object with the DI container.
 
-{% highlight php %}
+{% highlight php startinline %}
 
 class CartController {
   public function __construct($shoppingCart) {
@@ -79,8 +79,7 @@ Passing Parameters to Things
 ---
 You can pass parameters both when defining an object and when making an object.
 
-{% highlight php %}
-
+{% highlight php startinline %}
 	namespace org\my\cart\service\abstract\concrete\interface;
 	class Cart {
 		public function __construct($idUser, $listItems, $timestamp=NULL) {
@@ -106,8 +105,7 @@ Singletons
 ----------
 Singletons and new objects can both be access with \_make() but it depends on how you use \_make() with \_didef().
 
-{% highlight php %}
-
+{% highlight php startinline %}
    _didef('singletonService', '\ns\locator\class', 'arg1', 'arg2');
 
    //later
@@ -121,8 +119,7 @@ If your object is not inherently a service and needs new constructor params ever
 constructor params for every \_make() call.  Each unique combinations of parameters will be hashed and the resulting
 object will be cached and return on subsequent calls to \_make()
 
-{% highlight php %}
-
+{% highlight php startinline %}
    _didef('user', '\ns\locator\class');
 
    //later
@@ -135,8 +132,7 @@ object will be cached and return on subsequent calls to \_make()
 You can combine both methods by supplying parameters to the \_didef() which will be combined and used as defaults to
 subsequent \_make() calls
 
-{% highlight php %}
-
+{% highlight php startinline %}
    _didef('log', '\ns\locator\class', '/tmp/out.log');
 
    //later
@@ -150,8 +146,7 @@ Undefined Things
 ------
 An undefined thing will return a prototype object that logs all method calls used against it via the magic __call.
 
-{% highlight php %}
-
+{% highlight php startinline %}
     $cart = _make('shoppingCartService');
     echo( get_class($cart) );  //  Metrodi_Proto
 
