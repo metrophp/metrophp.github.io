@@ -35,6 +35,7 @@ Setting up and using the container
 ====
 Metro DI can be used by creating an object or as a singleton with globally namespaced functions.
 {% highlight php %}
+
     $cont = Metrodi_Container::getContainer();
     $cont->set('flaga', true);
     $cont->didef('logService', 'path/to/log.php', 'arg1', 'arg2', 'arg3');
@@ -43,6 +44,7 @@ Metro DI can be used by creating an object or as a singleton with globally names
 
 With global functions it looks like this:
 {% highlight php %}
+
     _set('flaga', true);
     _didef('logService', 'path/to/log.php', 'arg1', 'arg2', 'arg3');
     $log = _make('logService');
@@ -53,6 +55,7 @@ Defining Things
 In Metro DI you name your dependencies with the **_didef** function.
 
 {% highlight php %}
+
     _didef('shoppingCart', 'My\Cart\Cart');
     $cart = _make('shoppingCart');
     echo( get_class($cart) );  //  My\Cart\Cart
@@ -64,6 +67,7 @@ When another class wants a **$shoppingCart** as a constructor param, the DI cont
 automatically inject the defined class if you make the object with the DI container.
 
 {% highlight php %}
+
 class CartController {
   public function __construct($shoppingCart) {
     echo get_class($shoppingCart); // My\Cart\Cart
@@ -76,6 +80,7 @@ Passing Parameters to Things
 You can pass parameters both when defining an object and when making an object.
 
 {% highlight php %}
+
 	namespace org\my\cart\service\abstract\concrete\interface;
 	class Cart {
 		public function __construct($idUser, $listItems, $timestamp=NULL) {
@@ -102,6 +107,7 @@ Singletons
 Singletons and new objects can both be access with \_make() but it depends on how you use \_make() with \_didef().
 
 {% highlight php %}
+
    _didef('singletonService', '\ns\locator\class', 'arg1', 'arg2');
 
    //later
@@ -116,6 +122,7 @@ constructor params for every \_make() call.  Each unique combinations of paramet
 object will be cached and return on subsequent calls to \_make()
 
 {% highlight php %}
+
    _didef('user', '\ns\locator\class');
 
    //later
@@ -129,6 +136,7 @@ You can combine both methods by supplying parameters to the \_didef() which will
 subsequent \_make() calls
 
 {% highlight php %}
+
    _didef('log', '\ns\locator\class', '/tmp/out.log');
 
    //later
@@ -143,6 +151,7 @@ Undefined Things
 An undefined thing will return a prototype object that logs all method calls used against it via the magic __call.
 
 {% highlight php %}
+
     $cart = _make('shoppingCartService');
     echo( get_class($cart) );  //  Metrodi_Proto
 
