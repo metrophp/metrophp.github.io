@@ -1,3 +1,17 @@
+---
+layout: doc
+title: "DI Container"
+excerpt: "Starting out with MetroDI"
+categories: docs
+tags: [docs, intro, tutorial]
+image:
+  feature: so-simple-sample-image-2.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+comments: true
+share: true
+---
+
 DI Container
 ========
 DI is handled by the [Metrodi's Container](https://github.com/metrophp/metrodi) class.
