@@ -23,11 +23,6 @@ rm -Rf .git
 git init .
 {% endhighlight %}
 
-Copy the etc/bootstrap.php.txt to etc/bootstrap.php
-{% highlight bash %}
-cp etc/bootstrap.php.txt etc/bootstrap.php
-{% endhighlight %}
-
 Initialize dependencies with composer
 {% highlight bash %}
 composer install
