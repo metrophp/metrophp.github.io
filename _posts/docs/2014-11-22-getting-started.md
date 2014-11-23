@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Quick Start"
 excerpt: "Starting out with Metro PHP"
 categories: docs
