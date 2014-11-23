@@ -33,11 +33,16 @@ Initialize dependencies with composer
 composer install
 {% endhighlight %}
 
+Don't Panic, I Can Handle It
+======
+
 Now let's add a simple hello world file so you can see how the configuration works. Edit the etc/bootstrap.php file so it looks like this:
 {% highlight php %}
 // etc/bootsrap.php
 _iCanHandle('output',  'example/helloworld.php');
 {% endhighlight %}
+
+The *\_iCanHandle* function tells the kernel that the file **example/helloworld.php** wants to participate in the **ouput** lifecycle
 
 Create a directory in src called "example" and create the helloworld.php file
 {% highlight bash %}
@@ -46,7 +51,6 @@ mkdir src/example
 
 {% highlight php %}
 <?php
-
 class Example_Helloworld {
 
 	public function output($request, $response) {
@@ -57,8 +61,10 @@ class Example_Helloworld {
 
 Load your site and check your results.
 
+Notice how the example class doesn't need to extend any parent class.  The Metro PHP kernel uses a the name of the lifecycle handled by the component as a method name to act as the entry point of that component into the framework.
+
 Class Name Mapping
 ===
 Notice how the classname directly maps to the folder/file structure on the disk. example/helloworld.php directly translates to a file Example_Helloworld. Nofw prefers the "has-a" over the "is-a" paradigm. Consequently, you won't have modules or libraries that need nested folders. Having one way of mapping saves a lot of processing overhead as well. The trade-off is that sometimes your class names might appear ugly, but the upside is that you focus on how those clases connect to produce your application.
 
-Don't worry, you can also connect any classname with or without namespaces and with or without autoloading into the lifecycles with _\_iCanHandle()_
+Don't worry, you can also connect any classname with or without namespaces and with or without autoloading into the lifecycles with *\_iCanHandle()*
