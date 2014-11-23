@@ -54,7 +54,9 @@ mkdir src/example
 class Example_Helloworld {
 
 	public function hangup($request, $response) {
-		echo "Hello World. <br/>\n";
+		global $metrofw_start;
+                echo "Hello World. <br/>\n";
+                printf (" Request took: %.2f ms" ,(microtime(true) - $metrofw_start)*1000);
 	}
 }
 {% endhighlight %}
