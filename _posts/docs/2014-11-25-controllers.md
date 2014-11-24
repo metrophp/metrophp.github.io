@@ -53,4 +53,4 @@ class Example_Controller {
 }
 {% endhighlight %}
 
-That's it.  Yes, it's a little bit of magic, but much easier to mock and test than dozes of magic getters.
+That's it.  Yes, it's a little bit of magic, but much easier to mock and test than dozens of magic getters.
