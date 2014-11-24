@@ -12,10 +12,9 @@ comments: true
 share: true
 ---
 
-
-Your First Request
+Install the sample project
 =====
-Start by cloning the git repository _metroproject_.  
+To get the base file layout and a front controller start by cloning the git repository _metroproject_.  
 {% highlight bash %}
 git clone https://github.com/metrophp/metroproject.git mynewproj
 cd mynewproj
