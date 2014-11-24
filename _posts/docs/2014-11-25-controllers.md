@@ -42,7 +42,7 @@ $response->addTo('main', 'somthing');  //main corresponds to Metrofw_Template::p
 
 But how do I get a DB or User object?
 ----
-Oh you want your controller to have magic getters?  Well, here's how you can get anything that has been *_dedef()*ed 
+Oh you want your controller to have magic getters?  Well, here's how you can get anything that has been *_didef()*ed 
 previously.
 
 {% highlight PHP startinline %}
