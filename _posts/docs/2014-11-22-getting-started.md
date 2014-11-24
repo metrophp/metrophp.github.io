@@ -65,3 +65,19 @@ Class Name Mapping
 Notice how the classname directly maps to the folder/file structure on the disk. example/helloworld.php directly translates to a file Example_Helloworld. Nofw prefers the "has-a" over the "is-a" paradigm. Consequently, you won't have modules or libraries that need nested folders. Having one way of mapping saves a lot of processing overhead as well. The trade-off is that sometimes your class names might appear ugly, but the upside is that you focus on how those clases connect to produce your application.
 
 Don't worry, you can also connect any classname with or without namespaces and with or without autoloading into the lifecycles with *\_iCanHandle()*
+
+Adding a Controller
+===========
+Adding a controller is as simple as adding a Plain Ol' PHP Object.
+{% highlight php %}
+<?
+class Example_Main {
+
+    public function mainAction($request, $response) {
+        $response->addTo('main', 'Hello, ');
+        $response->addTo('main', $request->cleanString('name'));
+    }
+}
+{% endhighlight %}
+Paste that into **src/example/main.php**.  When you load http://localhost/mynewproj/index.php/example?name=Metro you should see "Hello, Metro" printed (below the one on the default template).
+
