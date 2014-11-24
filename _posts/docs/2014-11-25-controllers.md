@@ -39,3 +39,18 @@ Seriously.  Add some items to the *$response* with
 {% highlight PHP startinline %}
 $response->addTo('main', 'somthing');  //main corresponds to Metrofw_Template::parseSection('main') in the template
 {% endhighlight %}
+
+But how do I get a DB or User object?
+----
+Oh you want your controller to have magic getters?  Well, here's how you can get anything that has been *_dedef()*ed 
+previously.
+
+{% highlight PHP startinline %}
+
+class Example_Controller {
+    public function mainAction($request, $response, $user, $db) {
+    }
+}
+{% endhighlight %}
+
+That's it.  Yes, it's a little bit of magic, but much easier to mock and test than dozes of magic getters.
