@@ -70,7 +70,7 @@ Adding a Controller
 ===========
 Adding a controller is as simple as adding a Plain Ol' PHP Object.
 {% highlight php %}
-<?
+<?php
 class Example_Main {
 
     public function mainAction($request, $response) {
@@ -80,4 +80,25 @@ class Example_Main {
 }
 {% endhighlight %}
 Paste that into **src/example/main.php**.  When you load http://localhost/mynewproj/index.php/example?name=Metro you should see "Hello, Metro" printed (below the one on the default template).
+
+URL Structure
+----
+The default URL mapping goes like this:
+
+    /index.php/appName/modName/actionName
+    /src/appName/modName.php :: actionNameAction()
+ 
+where any missing parameter is defaulted to the word "main".  So, accessing http://localhost/mynewproj/index.php/example/foo/bar/name=baz/ would execute a function like
+
+{% highlight php %}
+<?php
+class Example_Foo {
+
+    public function barAction($request, $response) {
+        $response->addTo('main', 'Hello, ');
+        $response->addTo('main', $request->cleanString('name'));
+    }
+}
+{% endhighlight %}
+
 
