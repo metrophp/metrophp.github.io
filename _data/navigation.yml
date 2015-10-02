@@ -9,5 +9,11 @@
 - title: Documentation
   url: /docs/
 
+- title: Blog
+  url: /blog/
+
 - title: Github
   url: https://github.com/metrophp
+
+- title: Theme Setup
+  url: /theme-setup/
