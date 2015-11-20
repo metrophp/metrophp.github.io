@@ -18,6 +18,30 @@ layout: page
 </section>
 
 <section>
+<h3>
+Actual Code
+</h3>
+
+{% highlight php %}
+<?php
+class Example_Helloworld { 
+
+    public function mainAction($request, $response) {
+        $user = $request->getUser();
+        $item = _makeNew('dataitem', 'blog_post');
+        $item->andWhere('owner_id', $user->userId);
+        if (!$item->load( $request->cleanInt('id') ) ) {
+            $response->addUserMessage('no such blog post');
+            return;
+        }
+        $response->addTo('items', $item);
+    }
+}
+{% endhighlight %}
+
+</section>
+
+<section>
     <h3>
       Will I like the Metro PHP framework?
     </h3>
